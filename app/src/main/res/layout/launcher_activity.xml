@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/splash_back2"
+    android:id="@+id/splashscreen"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="25dp">
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_width="fill_parent"
+        android:text="CopyRight@ 2015 haowj.com"
+        android:textColor="#bed3ef"
+        android:textSize="13sp" />
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="All Rights Reserved"
+        android:textColor="#bed3ef"
+        android:textSize="13sp" />
+</RelativeLayout>
+
+
