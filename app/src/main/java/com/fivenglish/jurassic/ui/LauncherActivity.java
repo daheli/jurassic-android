@@ -52,8 +52,8 @@ public class LauncherActivity extends BaseActivity {
 					finish();
 					break;
 				case GO_LOGIN_MSG:
-//					Intent intent = new Intent(ctx, EntryLoginActivity.class);
-//					ctx.startActivity(intent);
+					Intent intent = new Intent(ctx, EntryLoginActivity.class);
+					ctx.startActivity(intent);
 					finish();
 					break;
 			}
@@ -69,7 +69,7 @@ public class LauncherActivity extends BaseActivity {
 //			UserService.updateUserInfo();
 //			handler.sendEmptyMessageDelayed(GO_MAIN_MSG, SPLASH_DURATION);
 //		} else {
-//			handler.sendEmptyMessageDelayed(GO_LOGIN_MSG, SPLASH_DURATION);
+			handler.sendEmptyMessageDelayed(GO_LOGIN_MSG, SPLASH_DURATION);
 //		}
 	}
 }

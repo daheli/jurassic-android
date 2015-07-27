@@ -16,7 +16,7 @@
         android:layout_marginBottom="30dp"
         android:layout_width="fill_parent"
         android:text="CopyRight@ 2015 haowj.com"
-        android:textColor="#bed3ef"
+        android:textColor="@android:color/darker_gray"
         android:textSize="13sp" />
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:text="All Rights Reserved"
-        android:textColor="#bed3ef"
+        android:textColor="@android:color/darker_gray"
         android:textSize="13sp" />
 </RelativeLayout>
 
