@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 
 import com.fivenglish.jurassic.R;
+import com.fivenglish.jurassic.util.LogUtils;
 import com.fivenglish.jurassic.util.Utils;
 
 import butterknife.ButterKnife;
@@ -30,6 +31,13 @@ public class LoginActivity extends EntryBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entry_login_activity);
         ButterKnife.inject(this);
+
+        userNameView.setFocusable(false);
+    }
+
+    @OnClick(R.id.activity_login_et_username)
+    public void onSelectUserClick(View v) {
+        selectUser();
     }
 
     @OnClick(R.id.activity_login_btn_login)
@@ -43,6 +51,10 @@ public class LoginActivity extends EntryBaseActivity {
 //        ctx.startActivity(intent);
 //    }
 //
+    private void selectUser() {
+        LogUtils.d("selectUser");
+    }
+
     private void login() {
         final String name = userNameView.getText().toString().trim();
 

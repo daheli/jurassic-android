@@ -12,20 +12,14 @@
  */package com.fivenglish.jurassic.ui;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
-import com.fivenglish.jurassic.MainActivity;
 import com.fivenglish.jurassic.R;
 import com.fivenglish.jurassic.ui.base.BaseActivity;
+import com.fivenglish.jurassic.ui.entry.LoginActivity;
 
 
 /**
@@ -52,7 +46,7 @@ public class LauncherActivity extends BaseActivity {
 					finish();
 					break;
 				case GO_LOGIN_MSG:
-					Intent intent = new Intent(ctx, EntryLoginActivity.class);
+					Intent intent = new Intent(ctx, LoginActivity.class);
 					ctx.startActivity(intent);
 					finish();
 					break;
@@ -72,4 +66,7 @@ public class LauncherActivity extends BaseActivity {
 			handler.sendEmptyMessageDelayed(GO_LOGIN_MSG, SPLASH_DURATION);
 //		}
 	}
+
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {}
+
 }
