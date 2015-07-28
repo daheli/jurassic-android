@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 
 import com.fivenglish.jurassic.R;
+import com.fivenglish.jurassic.util.Utils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -33,7 +34,7 @@ public class LoginActivity extends EntryBaseActivity {
 
     @OnClick(R.id.activity_login_btn_login)
     public void onLoginClick(View v) {
-//        login();
+        login();
     }
 
 //    @OnClick(R.id.activity_login_btn_register)
@@ -42,21 +43,15 @@ public class LoginActivity extends EntryBaseActivity {
 //        ctx.startActivity(intent);
 //    }
 //
-//    private void login() {
-//        final String name = userNameView.getText().toString().trim();
-//        final String password = passwordView.getText().toString().trim();
-//
-//        if (TextUtils.isEmpty(name)) {
-//            Utils.toast(R.string.username_cannot_null);
-//            return;
-//        }
-//
-//        if (TextUtils.isEmpty(password)) {
-//            Utils.toast(R.string.password_can_not_null);
-//            return;
-//        }
-//
-//        final ProgressDialog dialog = showSpinnerDialog();
+    private void login() {
+        final String name = userNameView.getText().toString().trim();
+
+        if (TextUtils.isEmpty(name)) {
+            Utils.toast(R.string.username_cannot_null);
+            return;
+        }
+
+        final ProgressDialog dialog = showSpinnerDialog();
 //        AVUser.logInInBackground(name, password, new LogInCallback<AVUser>() {
 //            @Override
 //            public void done(AVUser avUser, AVException e) {
@@ -67,5 +62,5 @@ public class LoginActivity extends EntryBaseActivity {
 //                }
 //            }
 //        });
-//    }
+    }
 }
