@@ -86,11 +86,8 @@
             <!--android:textSize="20sp"/>-->
         </LinearLayout>
 
-        <FrameLayout
-            android:id="@+id/id_content"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
     </LinearLayout>
+
 
 </ScrollView>
 

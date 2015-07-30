@@ -1,14 +1,18 @@
 package com.fivenglish.jurassic.ui.entry;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 
 
 import com.fivenglish.jurassic.R;
+import com.fivenglish.jurassic.ui.base.BaseFragment;
 import com.fivenglish.jurassic.util.LogUtils;
 import com.fivenglish.jurassic.util.Utils;
 
@@ -17,7 +21,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 
-public class LoginActivity extends EntryBaseActivity {
+public class LoginFragment extends BaseFragment {
 
     @InjectView(R.id.activity_login_et_username)
     public EditText userNameView;
@@ -26,13 +30,10 @@ public class LoginActivity extends EntryBaseActivity {
 //    public EditText passwordView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.entry_login_activity);
-        ButterKnife.inject(this);
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//        ButterKnife.inject(this);
         userNameView.setFocusable(false);
+        return inflater.inflate(R.layout.entry_login_fragment, container, false);
     }
 
     @OnClick(R.id.activity_login_et_username)
@@ -45,7 +46,7 @@ public class LoginActivity extends EntryBaseActivity {
         login();
     }
 
-//    @OnClick(R.id.activity_login_btn_register)
+    //    @OnClick(R.id.activity_login_btn_register)
 //    public void onRegisterClick(View v) {
 //        Intent intent = new Intent(ctx, EntryRegisterActivity.class);
 //        ctx.startActivity(intent);
@@ -53,6 +54,11 @@ public class LoginActivity extends EntryBaseActivity {
 //
     private void selectUser() {
         LogUtils.d("selectUser");
+        ChooseUserFragment fragment = new ChooseUserFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.commit();
     }
 
     private void login() {
@@ -70,7 +76,7 @@ public class LoginActivity extends EntryBaseActivity {
 //                dialog.dismiss();
 //                if (filterException(e)) {
 //                    UserService.updateUserLocation();
-//                    MainActivity.goMainActivityFromActivity(LoginActivity.this);
+//                    MainActivity.goMainActivityFromActivity(LoginFragment.this);
 //                }
 //            }
 //        });
