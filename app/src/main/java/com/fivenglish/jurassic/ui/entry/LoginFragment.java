@@ -1,6 +1,5 @@
 package com.fivenglish.jurassic.ui.entry;
 
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-
 
 import com.fivenglish.jurassic.R;
 import com.fivenglish.jurassic.ui.base.BaseFragment;
@@ -31,9 +29,10 @@ public class LoginFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        ButterKnife.inject(this);
+        View view = inflater.inflate(R.layout.entry_login_fragment, container, false);
+        ButterKnife.inject(this, view);
         userNameView.setFocusable(false);
-        return inflater.inflate(R.layout.entry_login_fragment, container, false);
+        return view;
     }
 
     @OnClick(R.id.activity_login_et_username)

@@ -19,6 +19,7 @@ import android.os.Message;
 
 import com.fivenglish.jurassic.R;
 import com.fivenglish.jurassic.ui.base.BaseActivity;
+import com.fivenglish.jurassic.ui.entry.EntryContainerActivity;
 import com.fivenglish.jurassic.ui.entry.LoginFragment;
 
 
@@ -46,7 +47,7 @@ public class LauncherActivity extends BaseActivity {
 					finish();
 					break;
 				case GO_LOGIN_MSG:
-					Intent intent = new Intent(ctx, LoginFragment.class);
+					Intent intent = new Intent(ctx, EntryContainerActivity.class);
 					ctx.startActivity(intent);
 					finish();
 					break;

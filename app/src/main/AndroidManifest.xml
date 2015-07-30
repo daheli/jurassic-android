@@ -31,7 +31,7 @@
             <!--</intent-filter>-->
         <!--</activity>-->
 
-        <activity android:name=".ui.entry.LoginFragment" />
+        <activity android:name=".ui.entry.EntryContainerActivity" />
 
     </application>
 

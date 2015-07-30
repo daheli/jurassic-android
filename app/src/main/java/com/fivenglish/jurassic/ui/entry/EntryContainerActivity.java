@@ -14,7 +14,7 @@ import butterknife.InjectView;
  */
 public class EntryContainerActivity extends BaseActivity {
 
-    @InjectView(R.id.activity_login_et_username)
+    @InjectView(R.id.fragment_container)
     public FrameLayout frameLayout;
 
     @Override
@@ -24,7 +24,7 @@ public class EntryContainerActivity extends BaseActivity {
         ButterKnife.inject(this);
 
 
-//        HeadlinesFragment firstFragment = new HeadlinesFragment();
-//        getFragmentManager().beginTransaction().replace(R.id.main_layout, fragment1).commit();
+        LoginFragment loginFragment= new LoginFragment();
+        getFragmentManager().beginTransaction().replace(R.id.fragment_container, loginFragment).commit();
     }
 }
