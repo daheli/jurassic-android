@@ -7,14 +7,17 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.fivenglish.jurassic.R;
+import com.fivenglish.jurassic.ui.view.HeaderLayout;
 
 public class BaseFragment extends Fragment {
     protected Context ctx;
+    protected HeaderLayout headerLayout;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ctx = getActivity();
+        headerLayout = (HeaderLayout) getView().findViewById(R.id.headerLayout);
     }
 
     protected void toast(String str) {
