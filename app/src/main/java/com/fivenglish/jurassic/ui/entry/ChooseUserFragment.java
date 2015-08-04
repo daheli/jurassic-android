@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import com.fivenglish.jurassic.R;
 import com.fivenglish.jurassic.ui.base.BaseFragment;
+import com.fivenglish.jurassic.util.LogUtils;
 
 /**
  * Created by lidahe on 15/7/29.
@@ -20,9 +21,17 @@ public class ChooseUserFragment extends BaseFragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
-        headerLayout.showTitle("用户列表");
+        headerLayout.showTitle("请选择用户");
+        headerLayout.showLeftBackButton(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        LogUtils.d("selectUser click");
+//                        getActivity().getFragmentManager().beginTransaction().remove(this).commit();
+                    }
+                }
+        );
     }
 
 }
