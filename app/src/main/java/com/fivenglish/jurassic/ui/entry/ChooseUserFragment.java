@@ -28,6 +28,7 @@ public class ChooseUserFragment extends BaseFragment {
                     @Override
                     public void onClick(View view) {
                         LogUtils.d("selectUser click");
+                        getActivity().getFragmentManager().popBackStack();
 //                        getActivity().getFragmentManager().beginTransaction().remove(this).commit();
                     }
                 }
